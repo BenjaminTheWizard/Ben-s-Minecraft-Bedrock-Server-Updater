@@ -10,6 +10,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def main():
+    mcurl = input("Put download URL here: ")
     current_path = os.getcwd()
 
     # Create Temporary directory to store the Minecraft server
@@ -21,7 +22,6 @@ def main():
         return
 
     # Download the server file
-    mcurl = input("Put download URL here: ")
     zip_path = os.path.join(temp_dir, "mcserver.zip")
 
     try:
