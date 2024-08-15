@@ -4,7 +4,9 @@ This project, named after its creator, provides a straightforward and efficient 
 
 Usage Agreement:
 
-Before using this software, please ensure you have read and agreed to the terms and conditions outlined by Microsoft/Mojang on the Bedrock server website. To update your server:
+Before using this software, please ensure you have read and agreed to the terms and conditions outlined by Microsoft/Mojang on the Bedrock server website.
+
+To update your server:
 
 Visit the official Minecraft Bedrock server download page. At: https://www.minecraft.net/en-us/download/server/bedrock
 
