@@ -70,6 +70,72 @@ def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     logging.info(f"Contents of the directory: {os.listdir(temp_dir)}")
 
+    # Attempt to fetch the server.properties file
+    serverPropFile = os.path.join(temp_dir, "server.properties")
+
+    # Check if server.properties exists
+    if not os.path.isfile(serverPropFile):
+        logging.error(f"File not found: {serverPropFile}")
+        return
+    
+    # Ensure the server.properties file has proper permissions
+    try:
+        st = os.stat(serverPropFile)
+        if not (st.st_mode & stat.S_IEXEC):
+            os.chmod(serverPropFile, st.st_mode | stat.S_IEXEC)
+    except Exception as e:
+        logging.error(f"Error setting permissions for the file: {e}")
+        return
+
+    # Attempt to read the server.properties file and append each line to a list
+    logging.info("Attempting to change the port number in file 'server.properties' to desired port number...")
+    serverPropReadList = []
+
+    # Port numbers to change the minecraft server to.
+    port = 4131
+    v6port = 4132
+
+    try:
+        with open(serverPropFile, "r") as f:
+            for line in f:
+                serverPropReadList.append(line.strip('\n'))
+    except Exception as e:
+        logging.error(f"Error reading to the file: {e}")
+        return
+    
+    # Change The server.properties file content by altering the list first
+
+    # Change the server ports
+    logging.info("Changing the server ports now...")
+    changeServerProp = False
+    try:
+        for pos in range(len(serverPropReadList)-1):
+            if serverPropReadList[pos].startswith("server-port"):
+                if serverPropReadList[pos].startswith("server-portv6"):
+                    serverPropReadList[pos] = "server-portv6="+str(v6port)
+                    logging.info(f"Running temporary server on v6port: {str(v6port)}")
+                else:
+                    serverPropReadList[pos] = "server-port="+str(port)
+                    logging.info(f"Running temporary server on port: {str(port)}")
+        changeServerProp = True
+        logging.info(f"Successfully using altered list.")
+    except Exception as e:
+        logging.warning(f"Problem querying the list 'serverPropReadList': {e}")
+        changeServerProp = False
+        logging.info(f"unsuccessfully using altered list")
+
+    # Overwrite the server.properties
+    if changeServerProp:
+        logging.info(f"Overwrting server.properties...")
+        try:
+            with open(serverPropFile, "w") as f:
+                for pos in range(len(serverPropReadList)-1):
+                    f.write(serverPropReadList[pos]+"\n")
+            logging.info(f"Successfully overwritten server.properties.")
+        except Exception as e:
+            logging.error(f"Problem writing to server.properties: {e}")
+            return
+
     # Attempt to run the Minecraft Bedrock Server
     logging.info("Attempting to execute Minecraft Bedrock server...")
     process = None
