@@ -8,11 +8,21 @@ Before using this software, please ensure you have read and agreed to the terms 
 
 To update your server:
 
+Download mcserverupdater.py and put this file in the same directory as your Bedrock Minecraft Server.
+
+Enter the following command into the terminal: sudo apt install python3
+
+Go to the same directory as your minecraft bedrock server in your terminal e.g.: cd /home/exampleuser/minecraftserver
+
+Type in your terminal the following after you navigated to the server directory: sudo python3 mcserverupdater.py
+
 Visit the official Minecraft Bedrock server download page. At: https://www.minecraft.net/en-us/download/server/bedrock
 
-Right-click the download button and select "Copy link address."
+Agree to the terms and condtions, right-click the download button(Usually green) and select "Copy link address."
 
-Paste this link into the software when prompted. This URL is used to download the server’s ZIP file, which my software will automatically uncompress and set up for you.
+Paste(Right click into the terminal) this link into the software when prompted. This URL is used to download the server’s ZIP file, which my software will automatically uncompress and set up for you.
+
+Get ready to play your updated Bedrock Minecraft Server, enjoy!
 
 System requirements:
 
