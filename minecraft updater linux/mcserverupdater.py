@@ -1,3 +1,5 @@
+# Hello, make sure to read the READNE.md to make sure you know how to fully operate this code at: https://github.com/BenjaminTheWizard/Ben-s-Minecraft-Bedrock-Server-Updater/blob/main/README.md
+
 import os
 import subprocess
 import requests
