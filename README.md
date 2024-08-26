@@ -18,6 +18,14 @@ How the Software Works:
 
 This software creates a temporary directory where it downloads and uncompresses the latest Minecraft server files. It’s essential to run the server initially to ensure all files are correctly configured. This step verifies that the directories and files are set up according to the latest standards.
 
+The port number of this software runs on 4131, the port numbers can be changed in the source code. This allows for extra control of which port number of where the update would take place. Please take in note, do not use the same port number running on any connection like a Minecraft Server when this will prevent the update from taking place.
+
+It's strongly advised that the port number that you use isn't accessed by the internet and make sure this port number cannot have access to port fowarding. This port number is strictly for updating the Bedrock Minecraft Server and no connections should be taken place on the server itself.
+
+If by any chance you're receiving errors mention that 'mcserverTemp exists', check in your server directory, remove the directory and try again.
+
+If by any means the code runs into an error due to any other errors. Email me and send me what error you're getting and I'm happy to share solutions to help you.
+
 Important Information:
 
 Open Source: This project is open source, and contributions are welcome.
@@ -29,3 +37,5 @@ Disclaimer: I have made every effort to ensure this software is robust and safe 
 Thank you for using this software, and I hope it makes managing your Minecraft server easier and more efficient.
 
 Have a great day!
+
+Email: benactive32@gmail.com
