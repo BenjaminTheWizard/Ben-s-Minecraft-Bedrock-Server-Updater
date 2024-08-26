@@ -14,6 +14,18 @@ Right-click the download button and select "Copy link address."
 
 Paste this link into the software when prompted. This URL is used to download the server’s ZIP file, which my software will automatically uncompress and set up for you.
 
+System requirements:
+
+CPU: Intel Core i3 3210 | AMD A8 7600 APU or equivalent
+
+RAM: 4 GB RAM
+
+HDD: 180 MB to 1 GB available space
+
+Network: Broadband Internet connection
+
+OS: The Linux version of Bedrock Dedicated Server requires Ubuntu 20.04 (LTS version) or later. Other distributions are not supported.
+
 How the Software Works:
 
 This software creates a temporary directory where it downloads and uncompresses the latest Minecraft server files. It’s essential to run the server initially to ensure all files are correctly configured. This step verifies that the directories and files are set up according to the latest standards.
